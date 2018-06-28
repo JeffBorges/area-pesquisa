@@ -1,0 +1,28 @@
+#servidor
+server:
+  port: 8080
+  servlet:
+    context-path: /area-pesquisa
+
+spring:
+
+  #banco de dados
+  datasource:
+    url: jdbc:postgresql://localhost:5432/dbAreaPesquisa
+    username: root
+    password: root
+    driver-class-name: org.postgresql.Driver
+
+  #spring jpa
+  jpa:
+    show-sql: true
+    properties:
+      hibernate:
+        temp:
+          use_jdbc_metadata_defaults: false
+    database-platform: org.hibernate.dialect.PostgreSQL9Dialect
+    hibernate:
+      ddl-auto: validate
+      naming:
+        implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyLegacyJpaImpl
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
