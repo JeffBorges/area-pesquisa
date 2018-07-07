@@ -96,11 +96,10 @@
       },
       converterAreas(areas) {
         return areas.reduce((acumulador, valorAtual, indice, lista) => {
-            let valor = acumulador.concat(valorAtual.nome);
-            if (indice + 1 < lista.length)
-              return valor.concat(', ');
-            return valor;
-          }, '');
+          const valor = acumulador.concat(valorAtual.nome);
+          if (indice + 1 < lista.length) return valor.concat(', ');
+          return valor;
+        }, '');
       },
       filtrar() {
         if (this.esperar) return;
